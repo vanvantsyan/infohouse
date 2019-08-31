@@ -1,0 +1,15 @@
+.blog-item {
+  padding: 1rem;
+}
+
+.principals li {
+  list-style-type: circle;
+}
+
+.pagination {
+  display: flex !important;
+  justify-content: center;
+}
+
+
+/*# sourceMappingURL=client.css.map*/

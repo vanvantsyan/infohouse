@@ -1,0 +1,197 @@
+header{
+    &.sticky-top{        
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        z-index: 9999;
+        @include media-breakpoint-up(lg) {
+            padding-left: 300px;
+        }
+        background-color: $gray-200;
+        .logo{
+            @include media-breakpoint-up(lg) {
+               display: none;
+            }
+            @include media-breakpoint-down(xs){
+                width: 100%;
+                text-align: center;
+                background: $blue;
+            }
+            img{
+                height: 55px;
+                padding: 6px 16px;
+                float: left;
+                @include media-breakpoint-down(xs){
+                    float: none;
+                }
+            }
+            span{
+                max-width: 160px;
+                word-wrap: break-word;
+                display: inline-block;
+                white-space: normal;
+                font-size: 15px;
+                color: $gray-900;
+                padding: 5px 0;
+                @include media-breakpoint-down(xs){
+                    text-align: left;
+                    max-width: none;
+                    color: $white;
+                }
+            }
+        }
+        ul{
+            padding: 0;
+            margin: 0;   
+            margin-right: 10px;
+            @include align-items(center);
+            @include flex-direction(row);
+            width: auto;
+            float: right;
+            li{
+                display: inline-block;
+                padding: 10px 20px;
+                .nav-profile-img{
+                    float: left;
+                    .user-face{
+                        width: 37px;
+                        height: 37px;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        float: left;
+                        border-radius: 100%;
+                        position: relative;
+                        .status{                            
+                            font-size: 10px;
+                            position: absolute;
+                            top: 43%;
+                            right: -2px;
+                            &.online{
+                                color: $green;
+                            }
+                            &.offline{
+                                color: $gray-600;
+                            }
+                        }
+                    }
+                    p{
+                        display: inline-block;
+                        margin: 0;
+                        padding: 5px 10px;
+                        padding-right: 0px;
+                    }   
+                }
+                &.notification-msg{
+                    padding-left: 0px;
+                    .dropdown-menu{
+                        padding: 0px;
+                        li{
+                            display: block;
+                            border-bottom: 1px solid $gray-400;
+                        }
+                    }
+                    a{
+                        &[data-toggle="dropdown"]{
+                            position: relative;
+                            padding: 11px 0px;
+                        }
+                        i{
+                            color:$gray-400;
+                        }
+                        .status-alert{
+                            color: $orange;
+                            font-size:8px; 
+                            position: absolute;
+                            top: 10px;
+                            right: 0;
+                        }
+                    }
+                }
+                &.user-menu{
+                    border-left: 1px solid $gray-400;
+                    a{
+                        i{
+                            font-size: 25px;
+                            color:$gray-400;
+                        }
+                    }
+                }
+                .dropdown-menu{
+                    border: none;
+                    border-radius:5px;
+                    @include box-shadow(0px 3px 21px 0px rgba(0, 0, 0, 0.2)); 
+                    margin: 0;
+                    min-width: 260px;
+                    top: 10px !important;  
+                    overflow: hidden;   
+                    z-index: 9999;               
+                    a{
+                        @include fontSize(13px);
+                        display: inline-block;
+                        width: 100%;
+                        padding: 15px 20px;
+                        text-decoration: none;
+                        color: $gray-900;
+                        &:hover{
+                            background-color: $gray-200;                           
+                        }
+                        i{
+                            @include fontSize(14px);
+                            color: $gray-900;
+                            margin-right: 5px;
+                        }
+                    }
+                    ul{
+                        margin: 0px;
+                        li{
+                            width: 100%;
+                            padding:0;
+                            &.not-head{
+                                padding: 15px 20px;
+                                text-align: center;
+                                background-color: $white;
+                                border-bottom: 1px solid $gray-300;  
+                                color: $gray-900; 
+                                @include fontSize(14px);
+                            }
+                            &.not-footer {
+                                padding: 0;
+                                text-align: center;
+                                background-color: #fff;
+                            }
+                            a{
+                                display: table;
+                                .media-left{
+                                    display: table-cell; 
+                                    vertical-align: top;
+                                    padding-right: 15px;
+                                    .user-img{
+                                        width: 40px;
+                                        height: 40px;
+                                        background-size: cover;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                                .media-body{
+                                    display: table-cell;
+                                    vertical-align: top;
+                                    .block{
+                                        width: 100%;
+                                        display: inline-block;
+                                    }
+                                    .block-time{
+                                        width: 100%;
+                                        display: inline-block; 
+                                        @include fontSize(12px);
+                                        letter-spacing: 0.5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

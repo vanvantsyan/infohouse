@@ -1,0 +1,207 @@
+body, html{
+    font-family: $font-family-sans-serif;
+    height: 100%;
+}
+.form-control{
+    &:focus{
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+.checkbox-ui{
+    position: relative;
+    display: inline-block;
+    input[type="checkbox"], input[type="radio"]{
+        position: absolute;
+        left: 0px;
+        z-index: 99;
+        width: 20px;
+        height: 20px;
+        float: left;
+        cursor: pointer;
+        opacity: 0;
+        &:checked{
+            + label{
+                &:after{
+                    @include fontSize(13px);
+                    content: '\f00c';
+                    font-family: 'fontawesome';
+                    position: absolute;
+                    left: 4px;
+                    top: 0.4px;
+                    color: $gray-text;
+                }
+            }
+        }
+    }
+    label{
+        float: left;    
+        @include fontSize(13px);
+        margin: 0px;
+        font-weight: 400;
+        font-family: $font-family-sans-serif;
+        color: $gray-text;
+        text-transform: capitalize;
+        padding-left: 30px;
+        cursor: pointer;
+        &:before{
+            content: '';
+            width: 20px;
+            height: 20px; 
+            border-radius: 4px;
+            border: 1px solid $gray-text;
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+    }
+    
+}
+.btn{
+    &.focus{
+        @include box-shadow(none);
+    }
+    &:focus{
+        @include box-shadow(none);
+    }
+}
+.error-mgs {
+    @include fontSize(12px);
+    color: red;
+}
+.custom-btn{
+    @include fontSize(13px);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    a { color: $white; }
+    background: $purple;
+    padding: 16px;
+    border-radius: 5px;
+    letter-spacing: 0.8px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    i{
+        @include fontSize(18px);
+        padding-right: 5px;
+        position: relative;
+        top: 2px;
+    }
+    &:hover{
+        background-color: $blue-hover;
+    }
+}
+
+.main-dashboard{
+    @include media-breakpoint-up(lg) {
+        padding-left: 300px;
+    }
+    width: 100%;
+
+    .page-wrapper{
+        padding-left: 30px; 
+        padding-right: 30px; 
+        padding-top: 65px;
+        @include media-breakpoint-down(md){
+            padding-top: 75px;
+        }
+        @include media-breakpoint-down(xs){
+            padding-top: 130px;
+            padding-left: 20px; 
+            padding-right: 20px; 
+        }
+        .page-header{
+            padding: 35px 0 20px;
+            @include align-items(center);
+            @include media-breakpoint-down(xs){
+                display: inline-block;
+                .col{
+                    display: inline-block;   
+                    width: 100%;
+                }
+            }
+            h1{
+                margin: 0px;
+                @include fontSize(20px);
+                font-weight: bold;
+                color: $gray-900;
+                letter-spacing: 0.5px;
+                @include media-breakpoint-down(xs){
+                    margin-bottom: 15px;
+                    @include fontSize(18px);
+                }
+            }
+            .col:nth-child(2){
+                text-align: right;
+                @include media-breakpoint-down(xs){
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+
+.btn-create,
+.btn-purple {
+    color:$white;
+    background-color: $muave;
+    &:hover{
+        color:$white;
+        background-color: $muave-hover;
+
+    }
+}
+
+
+.btn-primary{
+    background-color: $blue;
+    outline: none;
+    &:hover{
+        background-color: $blue-hover;   
+    }
+}
+
+.btn.btn-default {
+    background-color:$gray-eaeaea;
+}
+
+
+a:hover{
+   color:  $blue-hover; 
+}
+.btn{
+    outline: none !important; 
+    border: none;  
+}
+
+.scrollbar-inner{
+    .scroll-element{
+        .scroll-element_track {
+            background-color: #c9c7f7; 
+            @include opacity(1);
+        }
+        .scroll-bar{
+            background-color:#3f3b9a; 
+            @include opacity(1);
+        }
+        &:hover{
+            .scroll-bar{
+                background-color:#3f3b9a;   
+            }
+        }
+    }
+}
+
+select{
+    cursor: pointer;
+}
+
+i {
+    font-family:'fontawesome';
+}

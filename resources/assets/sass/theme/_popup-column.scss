@@ -1,0 +1,225 @@
+.modal-backdrop {
+    z-index: 99999;
+}
+.popup-create-column{
+    z-index: 999999;
+    .modal-dialog{
+        max-width: 555px;
+        .modal-content {
+            width: 100%;
+            display: inline-block;
+            background: $white;
+            border: none;
+            padding: 20px;
+            .popup-header {
+                position: relative;
+                padding-top: 34px;
+                .close{
+                    position: absolute;
+                    right: 0;
+                    top: 0px;
+                    @include fontSize(28px);
+                    color: $blue;
+                    opacity: 0.7;
+                    outline: none;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                h5{
+                    @include fontSize(30px);
+                    font-weight: 600;
+                    color: $gray-900;
+                    text-align: center;
+                }
+                .option-label{
+                    @include fontSize(15px);
+                    font-weight: 500;
+                    color: $gray-900;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+                .select-form{
+                    .checkbox-ui{
+                        margin-right: 20px;
+                        @media (max-width: 470px) {
+                            margin-right: 0px;  
+                            margin-bottom: 10px;
+                        }
+                        label{
+                            &:after{
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+            .popup-body{
+                .single-column-form{
+                    display: none;
+                    background-color: $gray-200;
+                    padding: 20px 15px;
+                    border-radius: 4px;
+                    h3{
+                        @include fontSize(15px);
+                        color: $gray-900;
+                        font-weight: 600;
+                        margin: 0px 0 10px;
+                    }
+                    .form-control{
+                        height: 44px;
+                        @include fontSize(13px);
+                        color: $gray-666;
+                        border: none;
+                    }
+                    .btn{
+                        @extend .custom-btn;
+                        width: 100%;
+                        @include fontSize(13px);                        
+                        margin-top: 1rem;
+                        padding: 11px;
+                        text-transform: uppercase;
+                        &:disabled{
+                            background-color: $gray-c6c6c6;
+                            color: #eeeeee;
+                        }
+                        
+                    }
+                    &.active-form{
+                        display: block;
+                    }
+                }
+                .collection-columns-form{
+                    display: none;
+                    background-color: $gray-200;
+                    padding:  20px 15px;
+                    border-radius: 4px;
+                    &.active-form{
+                        display: block;
+                    }
+                    form{
+                        h3{
+                            @include fontSize(15px);
+                            color: $gray-900;
+                            font-weight: 600;
+                            margin: 0px 0 10px;
+                        }
+                        .date-time-option{
+                            margin-bottom: 15px;
+                            @include align-items(center);
+                            @include media-breakpoint-down(xs){
+                                display: inline-block;
+                                width: 100%;
+                                margin-left: 0;
+                                margin-right: 0;
+                            }
+                            .col{
+                                text-align: center;
+                                @include media-breakpoint-down(xs){
+                                    padding: 0;
+                                    margin: 10px 0;
+                                }
+                                &:nth-child(2){
+                                    padding: 0px;
+                                    text-transform: uppercase;
+                                }
+                                i{
+                                    position: absolute;
+                                    @include fontSize(18px);
+                                    color: $gray-666;
+                                    padding: 12px;
+                                    opacity: 0.6;
+                                }
+                                input{
+                                    @include fontSize(12px);
+                                    background: $white;
+                                    border: none;
+                                    padding: 13px;
+                                    padding-left: 36px;
+                                    color: $gray-666;
+                                    border-radius: 6px;
+                                    outline: none;
+                                    text-align: left;
+                                    @include media-breakpoint-down(xs){
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        select{
+                            height: 44px;
+                            @include fontSize(13px);
+                            color: $gray-666;
+                            border: none;
+                        }
+                        .checkbox-ui{
+                            display: inline-block;
+                            box-sizing: border-box;
+                            label{
+                                margin: 0px;
+                                margin-right: 40px;
+                                &:after{
+                                    color: $blue;
+                                }
+                            }
+                        }
+                        .filter-footer{
+                            border-top: 1px solid $gray-300;
+                            padding-top: 20px;
+                            display: inline-block;
+                            width: 100%;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                            .row{
+                                @include align-items(center);
+                                @media (max-width: 460px){
+                                    display: inline-block;
+                                    .col{
+                                        display: inline-block;
+                                        width: 100%;                                        
+                                        .apply-filter-btn{
+                                         float: right;   
+                                        }
+                                        .cancel-link{
+                                            float: left;
+                                            padding: 3px 0px;
+                                            margin: 7px 0px;
+                                        }
+                                    }
+                                }
+                                .reset-link{
+                                    text-decoration: none;
+                                    @include fontSize(13px);
+                                    color: $orange;
+                                    font-weight: 600;
+                                    &:hover{
+                                        text-decoration: underline;
+                                    }
+                                }
+                                .cancel-link{
+                                    text-decoration: none;
+                                    color: $gray-666;
+                                    @include fontSize(13px);
+                                    font-weight: 600;
+                                    margin-right: 20px;
+                                    &:hover{
+                                        text-decoration: underline;
+                                    }
+                                }
+                                .apply-filter-btn{
+                                    @include fontSize(13px);
+                                    font-weight: 600;  
+                                    padding: 11px 20px;
+                                }
+                                .col:last-child{
+                                    text-align:right;
+                                }
+                            }
+                        }
+                    } 
+                    
+                }
+            }
+        }
+    }
+}

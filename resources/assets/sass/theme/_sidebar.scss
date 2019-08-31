@@ -1,0 +1,191 @@
+.menu-toggle{
+    position: absolute;
+    z-index: 999999;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 7px 14px;
+    top: 0px;
+    right: -36px;
+    background-color:  $purple;
+    color: $white;
+    outline: none !important;
+    border: none;
+    @include media-breakpoint-down(xs){
+        top: 12px;  
+    }
+    &[aria-expanded="true"]{
+        background-color:  $dark-purple;
+        .navbar-toggler-icon{
+            &:before{
+                content: "\f104";
+            }
+        }
+    }
+    .navbar-toggler-icon{
+        float: left;
+        width: auto;
+        height: auto;
+        padding: 0;
+        font-size: 23px;
+        &:before{
+            content: "\F078";
+            font-family: $fontawesome;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+.sidebar{
+    display: block !important;
+    overflow: visible !important; 
+    @include media-breakpoint-down(md) {
+        left: -300px;
+        @include transition(left 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94));
+        top: 65px;
+        height: calc(100% - 65px );       
+        &.show{
+            left: 0;
+            display: block !important; 
+            @include transition(left 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94));
+        }
+    }
+    width: 300px;
+    background-color: $dark-purple;
+    position: relative;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    .sidebar-sticky{
+        height: 100%;
+        overflow-y: auto;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+    }
+    .logo{
+        text-align: center;
+        @include vw( margin-top, 70px, $desktop);
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+        img{
+            width: 200px;
+        }
+        p{
+            @include fontSize(15px);
+            font-weight: bold;
+            color: $white;
+            text-transform: uppercase;
+            max-width: 200px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+    }
+    ul{
+        &.nav{
+        @include vw( padding-top, 17px, $desktop);
+        @include vw( padding-bottom, 17px, $desktop);
+        display: block;       
+            li{
+                &.active{
+                    a{
+                        color:$orange;
+                        &:before{
+                            content: '';
+                            width: 4px;
+                            height: 100%;
+                            display: inline-block;
+                            background-color: $orange;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            
+                        }
+                    }
+                    li{
+                        &.active{
+                            a{
+                                color:$orange;
+                            }
+                        }
+                        a{
+                            color: $white;
+                            &:before{
+                                display: none;
+                            }
+                            &:hover{
+                                color:$orange; 
+                            }
+                        }
+                    }
+                }
+                a{
+                    @include vw( padding-left, 30px, $desktop);
+                    @include vw( padding-right, 30px, $desktop);
+                    margin: 12px 0;
+                    color: $white;
+                    @include fontSize(14px);
+                    text-transform: uppercase;
+                    position: relative;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    &:hover{
+                        color:$orange;
+                    }
+                    i{
+                        margin-right: 20px;
+                    }
+                    &[aria-expanded="false"]{
+                        &:after{
+                            content: '\f078';
+                            font-family: $fontawesome;
+                            float: right;
+                        }
+                    }
+                    &[aria-expanded="true"]{
+                        &:after{
+                            content: '\f077';
+                            font-family: $fontawesome;
+                            float: right;
+                        }
+                    }
+                }
+                .sub-menu{
+                    background: #302e6f;
+                    li{
+                        a{
+                            margin: 0px;
+                            text-transform: none;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-link-sidebar{
+       position: absolute;
+       bottom: 0;
+       left: 0px;
+       width: 100%;
+       background:$dark-purple;
+       text-align: center; 
+       a{
+           color: $white;
+           padding: 10px 20px;
+           display: inline-block;
+           i{
+               padding-right: 5px;
+           }
+           &:hover{
+               text-decoration: none;
+               color: $orange;
+           }
+       }
+    }
+}

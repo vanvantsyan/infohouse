@@ -1,0 +1,181 @@
+// login page css 
+.login-page{
+    max-width: 525px;
+    padding: 15px;
+    margin: auto;
+    @include vw(padding-top, 30px, $desktop);
+    @media (max-width: 767px) {
+        padding: 5px;
+        @include vw(padding-top, 20px, $mobile);
+    }
+    .logo{
+        text-align: center;
+        img{
+            max-width: 200px;
+        }
+        p{
+            @include fontSize(16px);
+            @include vw(margin-top, 15px, $desktop);
+            @include vw(margin-bottom, 30px, $desktop);
+            @media (max-width: 767px) {
+                @include vw(margin-top, 10px, $mobile);
+                @include vw(margin-bottom, 20px, $mobile);
+            }
+            font-weight: bold;
+            font-family: $font-family-sans-serif;
+            text-transform: uppercase;
+            color: $gray-900;
+        }
+    }
+    .form-heading{
+        text-align: center;
+        h3{
+            @include fontSize(25px);
+            margin: 0px;
+            @include vw(margin-bottom, 10px, $desktop);
+            font-weight: bold;
+            font-family: $font-family-sans-serif;
+            text-transform: uppercase;
+            color: $gray-900;
+            @media (max-width: 767px) {
+                @include vw(margin-bottom, 10px, $mobile);
+            }
+        }
+        p{
+            @include fontSize(14px);
+            margin: 0px;
+            @include vw(margin-top, 5px, $desktop);
+            font-weight: 400;
+            font-family: $font-family-sans-serif;
+            color: $gray-600;
+            @media (max-width: 767px) {
+                @include vw(margin-bottom, 5px, $mobile);
+            }
+            
+        }
+    }
+    form{
+        background-color: $gray-100;
+        border-radius: 10px;
+        @include vw(padding, 40px, $desktop);
+        @include vw(margin-top, 40px, $desktop);
+        @include vw(margin-bottom, 40px, $desktop);
+        @media (max-width: 767px) {
+            @include vw(padding, 25px, $mobile);
+            @include vw(margin-top, 15px, $mobile);
+            @include vw(margin-bottom, 15px, $mobile);
+        }
+        .form-group{
+            label{
+                @include fontSize(13px);
+                margin: 0px;
+                font-weight: 500;
+                font-family: $font-family-sans-serif;
+                color: $gray-900;
+                text-transform: capitalize;
+            }
+            input.form-control{
+                @include fontSize(13px);
+                border-radius: 0px;
+                border: none;
+                border-bottom: 2px solid $gray-500;
+                background: none;
+                padding: 0px;
+                @include input-placeholder{
+                    color: $gray-text;
+                    opacity: 1;                    
+                }
+                &:focus{
+                    border-bottom-color: $purple;
+                    @include box-shadow(0px 2px 0px rgba(114, 103, 233, 0.09));
+                    @include input-placeholder{
+                        color: transparent;
+                        opacity: 0;                    
+                    }
+                }
+            }
+            .checkbox-ui{
+                @extend .checkbox-ui;
+            }
+            .forgot-link{
+                @media (min-width: 768px) {
+                    text-align: right;                    
+                }
+                @media (max-width: 767px) {
+                    @include vw(margin-top, 10px, $mobile);                   
+                }
+                a{
+                    @include fontSize(13px);
+                    margin: 0px;
+                    font-family: $font-family-sans-serif;
+                    color: $gray-900;
+                    text-transform: capitalize;
+                    &:hover{
+                        color: $purple;
+                    }
+                }
+            }
+        }
+        .submit-btn{
+            @extend .custom-btn;
+            margin: auto;
+            display: block;
+            width: 200px;
+            margin-top: 30px;
+        }
+        
+    }
+    .form-bottom{
+        text-align: center;
+        p{
+            @include fontSize(13px);
+            font-weight: 600;
+            color: $gray-900;
+            a{
+                color: $purple;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.reset-password-page{
+    @extend .login-page;
+    form{
+        .submit-btn{
+            width: 262px;
+        }
+    }
+}
+.forgot-password-page{
+    @extend .login-page;
+    @media (max-width:767px) {
+        .forgot-link{
+            text-align: center;
+        } 
+    }
+}
+.success-msg-page{
+    @extend .login-page;
+    .form-heading {
+        .success-title{
+            color: $purple;
+        }
+    }
+    form{
+        .success-msg{
+            @include fontSize(13px);
+            text-align: center;
+            color: $gray-900;
+            font-weight: 500;
+            line-height: 25px;
+            max-width: 380px;
+            margin: auto;
+            a{
+                color: $purple; 
+            }
+        }
+    }
+}
